@@ -1,4 +1,4 @@
-// Type definitions for Cytoscape.js 3.1
+// Type definitions for Cytoscape.js 3.2.8
 // Project: http://js.cytoscape.org/
 // Definitions by:  Fabian Schmidt and Fred Eisele <https://github.com/phreed>
 //                  Shenghan Gao <https://github.com/wy193777>
@@ -3116,6 +3116,7 @@ declare namespace cytoscape {
      */
     namespace Css {
         type Colour = string;
+        type Data = string; // "data(SomeAttribute)"
 
         /**
          * The shape of the node’s body.
@@ -3146,60 +3147,60 @@ declare namespace cytoscape {
          * http://js.cytoscape.org/#style/node-body
          */
         interface Node extends PaddingNode {
-            "label"?: string;
+            "label"?: string | "data(label)" | Data;
             /**
              * The width of the node’s body.
              * This property can take on the special value label
              * so the width is automatically based on the node’s label.
              */
-            "width"?: number | "label";
+            "width"?: number | "label" | "data(width)" | Data;
             /**
              * The height of the node’s body.
              * This property can take on the special value label
              * so the height is automatically based on the node’s label.
              */
-            "height"?: number | "label";
+            "height"?: number | "label" | "data(height)" | Data;
             /**
              * The shape of the node’s body.
              */
-            "shape"?: NodeShape;
-            "shape-polygon-points"?: ShapePolygonPoints;
+            "shape"?: NodeShape | "data(shape)" | Data;
+            "shape-polygon-points"?: ShapePolygonPoints | "data(shape-polygon-points)" | Data;
 
-            "opacity"?: number;
+            "opacity"?: number | "data(opacity)" | Data;
 
-            "backgroundColor"?: Colour;
+            "backgroundColor"?: Colour | "data(backgroundColor)" | Data;
             /**
              * The colour of the node’s body.
              */
-            "background-color"?: Colour;
+            "background-color"?: Colour | "data(background-color)" | Data;
             /**
              * Blackens the node’s body for values from 0 to 1;
              * whitens the node’s body for values from 0 to -1.
              */
-            "background-blacken"?: number;
+            "background-blacken"?: number | "data(background-blacken)" | Data;
             /**
              * The opacity level of the node’s background colour.
              */
-            "background-opacity"?: number;
+            "background-opacity"?: number | "data(background-opacity)" | Data;
             /**
              * The size of the node’s border.
              */
-            "border-width"?: number;
+            "border-width"?: number | "data(border-width)" | Data;
             /**
              * The style of the node’s border.
              */
-            "border-style"?: LineStyle;
+            "border-style"?: LineStyle | "data(border-style)" | Data;
             /**
              * The colour of the node’s border.
              */
-            "border-color"?: Colour;
+            "border-color"?: Colour | "data(border-color)" | Data;
             /**
              * The opacity of the node’s border.
              * A value between [0 1].
              */
-            "border-opacity"?: number;
+            "border-opacity"?: number | "data(border-opacity)" | Data;
 
-            "text-opacity"?: number;
+            "text-opacity"?: number | "data(text-opacity)" | Data;
         }
 
         /**
